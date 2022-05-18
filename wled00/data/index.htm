@@ -5,15 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="theme-color" content="#222222">
 	<meta content="yes" name="apple-mobile-web-app-capable">
-	<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAGACGAAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAE1JREFUOI1j/P//PwOxgNGeAUMxE9G6cQCKDWAhpADZ2f8PMjBS3QW08QK20KaZC2gfC9hCnqouoNgARgY7zMxAyNlUdQHlXiAlO2MDAD63EVqNHAe0AAAAAElFTkSuQmCC"/>
-	<title>WLED</title>
+	<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAYCAYAAAACqyaBAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAALtJREFUSMdjYCATmInH/WegEDBSw/JTLxcxDpjl5DqCYsvd3k1hYGBgYNgllEOyI5ioFb9u76bAHWImHvefGD0s1E5UyCEB048rJFholZKJcQQLtS0lxREs2CzdoygHZ7vcf0Q1R8ASJcw+FnwW0wIgBz0TuQUENQATJSUUVSwfUJ+PWk5vwEjLAoZgVhtIn2OU7Se3XkXhm3trMzAwMDCcb5iCIm7YACmtOo7cJtqyChvV0QQ3mtoHDgAAV3hXZ61LAHUAAAAASUVORK5CYII"/>
+	<title>iStar Lights</title>
 	<script>function feedback(){}</script>
 	<link rel="stylesheet" href="index.css">
 </head>
 <body onload="onLoad()">
 
-<div id="cv" class="overlay">Loading WLED UI...</div>
-<noscript><div class="overlay" style="opacity:1;">Sorry, WLED UI needs JavaScript!</div></noscript>
+<div id="cv" class="overlay">Loading iStar Lights UI...</div>
+<noscript><div class="overlay" style="opacity:1;">Sorry, iStar Lights UI needs JavaScript!</div></noscript>
 <div id="bg"></div>
 
 <div class="wrapper" id="top">
@@ -197,18 +197,18 @@
 <div id="namelabel" onclick="toggleNodes()"></div>
 <div id="info" class="modal">
 	<div id="imgw">
-		<img class="wi" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAFCAYAAAC5Fuf5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABbSURBVChTlY9bDoAwDMNW7n9nwCipytQN4Z8tbrTHmDmF4oPzyldwRqp1SSdnV/NuZuzqerAByxXznBw3igkeFEfXyUuhK/yFM0CxJfyqXZEOc6/Sr9/bf7uIC5Nwd7orMvAPAAAAAElFTkSuQmCC" />
+		<img class="wi" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAFCAYAAABfPyy9AAAACXBIWXMAABBwAAAQcAG1gF0tAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAK9JREFUGNNtkFENwzAMRF+GIBAKoQwWCINQCIMwCIFQCIFQCIVQCGPw9uNI3jRL0Tnx5Xw2alerOtQjzhr4DtzUpp5EJO6lbqRQl3zp8bnzE+qR8j3EllwLMyPlLRo3td2AFTiBGgJDrT+NavCewJbeT+AAsrkB3APfc9Q6RdXzj8stmh9zTan2ZUh9hUYHuIX7BlyqwFVKuYI/d74Aj1JKA/YwMGs9TwWMUsoK7AAfLyvQl7No2acAAAAASUVORK5CYII" />
 	</div><br>
 <div id="kv">Loading...</div><br>
 <button class="btn infobtn" onclick="requestJson(null)">Refresh</button>
 <button class="btn infobtn" onclick="toggleInfo()">Close Info</button><br>
 <button class="btn infobtn" onclick="toggleNodes()">Instance List</button>
-<button class="btn infobtn" id="resetbtn" onclick="cnfReset()">Reboot WLED</button><br>
-<span class="h">Made with <span id="heart">&#10084;&#xFE0E;</span> by Aircoookie and the WLED community</span>
+<button class="btn infobtn" id="resetbtn" onclick="cnfReset()">Reboot iStar Lights</button><br>
+<span class="h">Made with <span id="heart">&#10084;&#xFE0E;</span> by Aircoookie, iStar Lights and the WLED community</span>
 </div>
 
 <div id="nodes" class="modal">
-  <div id="ndlt">WLED instances</div>
+  <div id="ndlt">iStar Lights instances</div>
   <div id="kn">Loading...</div><br>
   <button class="btn infobtn" onclick="loadNodes()">Refresh</button>
   <button class="btn infobtn" onclick="toggleNodes()">Close list</button><br>
