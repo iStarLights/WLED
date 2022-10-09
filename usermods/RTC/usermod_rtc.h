@@ -1,7 +1,7 @@
 #pragma once
 
 #include "src/dependencies/time/DS1307RTC.h"
-#include "wled.h"
+#include "istar.h"
 
 #ifdef ARDUINO_ARCH_ESP32
   #define HW_PIN_SCL 22
@@ -41,7 +41,7 @@ class RTCUsermod : public Usermod {
 
     /*
      * addToConfig() can be used to add custom persistent settings to the cfg.json file in the "um" (usermod) object.
-     * It will be called by WLED when settings are actually saved (for example, LED settings are saved)
+     * It will be called by ISTAR when settings are actually saved (for example, LED settings are saved)
      * I highly recommend checking out the basics of ArduinoJson serialization and deserialization in order to use custom settings!
      */
     void addToConfig(JsonObject& root)

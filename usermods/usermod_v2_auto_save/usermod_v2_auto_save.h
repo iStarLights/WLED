@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 
 // v2 Usermod to automatically save settings 
 // to configurable preset after a change to any of
@@ -137,7 +137,7 @@ class AutoSaveUsermod : public Usermod {
 
     /*
      * addToJsonInfo() can be used to add custom entries to the /json/info part of the JSON API.
-     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the WLED web UI.
+     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the ISTAR web UI.
      * Below it is shown how this could be used for e.g. a light sensor
      */
     //void addToJsonInfo(JsonObject& root) {
@@ -164,7 +164,7 @@ class AutoSaveUsermod : public Usermod {
 
     /*
      * addToConfig() can be used to add custom persistent settings to the cfg.json file in the "um" (usermod) object.
-     * It will be called by WLED when settings are actually saved (for example, LED settings are saved)
+     * It will be called by ISTAR when settings are actually saved (for example, LED settings are saved)
      * If you want to force saving the current state, use serializeConfig() in your loop().
      * 
      * CAUTION: serializeConfig() will initiate a filesystem write operation.
@@ -188,7 +188,7 @@ class AutoSaveUsermod : public Usermod {
 
     /*
      * readFromConfig() can be used to read back the custom settings you added with addToConfig().
-     * This is called by WLED when settings are loaded (currently this only happens once immediately after boot)
+     * This is called by ISTAR when settings are loaded (currently this only happens once immediately after boot)
      * 
      * readFromConfig() is called BEFORE setup(). This means you can use your persistent values in setup() (e.g. pin assignments, buffer sizes),
      * but also that if you want to write persistent values to a dynamic buffer, you'd need to allocate it here instead of in setup.

@@ -3,7 +3,7 @@
 #include "U8g2lib.h"
 #include "SHT85.h"
 #include "Wire.h"
-#include "wled.h"
+#include "istar.h"
 
 class QuinLEDAnPentaUsermod : public Usermod
 {
@@ -250,7 +250,7 @@ class QuinLEDAnPentaUsermod : public Usermod
 
         return networkHasChanged = true;
       }
-      #ifdef WLED_USE_ETHERNET
+      #ifdef ISTAR_USE_ETHERNET
       if (lastKnownEthType != ethernetType || lastKnownEthLinkUp != ETH.linkUp()) {
         lastKnownEthType = ethernetType;
         lastKnownEthLinkUp = ETH.linkUp();
@@ -349,7 +349,7 @@ class QuinLEDAnPentaUsermod : public Usermod
 
             if (mqttEnabled && mqttServer[0] != 0) {
               char charMqttStatus[charPerRow+1];
-              sprintf(charMqttStatus, "MQTT: %s", (WLED_MQTT_CONNECTED ? "Connected" : "Disconnected"));
+              sprintf(charMqttStatus, "MQTT: %s", (ISTAR_MQTT_CONNECTED ? "Connected" : "Disconnected"));
               oledDisplay->drawStr(0, oledRow, charMqttStatus);
               oledRow += 10;
             }
@@ -359,16 +359,16 @@ class QuinLEDAnPentaUsermod : public Usermod
             sprintf(charUptime, "Uptime: %ds", int(millis()/1000 + rolloverMillis*4294967)); // From json.cpp
             oledDisplay->drawStr(0, 53, charUptime);
 
-            char charWledVersion[charPerRow+1];
-            sprintf(charWledVersion, "WLED v%s", versionString);
-            oledDisplay->drawStr(0, 63, charWledVersion);
+            char charISTARVersion[charPerRow+1];
+            sprintf(charISTARVersion, "ISTAR v%s", versionString);
+            oledDisplay->drawStr(0, 63, charISTARVersion);
             break;
           }
 
           // Network Info
           case 3:
-            #ifdef WLED_USE_ETHERNET
-              if (lastKnownEthType == WLED_ETH_NONE) {
+            #ifdef ISTAR_USE_ETHERNET
+              if (lastKnownEthType == ISTAR_ETH_NONE) {
                 oledDisplay->drawStr(0, oledRow, "Ethernet: No board selected");
                 oledRow += 10;
               }
@@ -379,7 +379,7 @@ class QuinLEDAnPentaUsermod : public Usermod
             #endif
 
             if (lastKnownNetworkConnected) {
-              #ifdef WLED_USE_ETHERNET
+              #ifdef ISTAR_USE_ETHERNET
                 if (lastKnownEthLinkUp) {
                   oledDisplay->drawStr(0, oledRow, "Ethernet: Link Up");
                   oledRow += 10;
@@ -388,7 +388,7 @@ class QuinLEDAnPentaUsermod : public Usermod
               #endif
               // Wi-Fi can be active with ETH being connected, but we don't mind...
               if (lastKnownWiFiConnected) {
-                #ifdef WLED_USE_ETHERNET
+                #ifdef ISTAR_USE_ETHERNET
                   if (!lastKnownEthLinkUp) {
                 #endif
 
@@ -400,7 +400,7 @@ class QuinLEDAnPentaUsermod : public Usermod
                 oledDisplay->drawStr(0, oledRow + 10, charCurrentSsid);
                 oledRow += 20;
 
-                #ifdef WLED_USE_ETHERNET
+                #ifdef ISTAR_USE_ETHERNET
                   }
                 #endif
               }
@@ -412,10 +412,10 @@ class QuinLEDAnPentaUsermod : public Usermod
               sprintf(charCurrentIp, "IP: %s", currentIpChar);
               oledDisplay->drawStr(0, oledRow, charCurrentIp);
             }
-            // If WLED AP is active. Theoretically, it can even be active with ETH being connected, but we don't mind...
+            // If ISTAR AP is active. Theoretically, it can even be active with ETH being connected, but we don't mind...
             else if (lastKnownApActive) {
               char charCurrentApStatus[charPerRow+1];
-              sprintf(charCurrentApStatus, "WLED AP: %s (Ch: %d)", (lastKnownApActive ? "On" : "Off"), lastKnownApChannel);
+              sprintf(charCurrentApStatus, "ISTAR AP: %s (Ch: %d)", (lastKnownApActive ? "On" : "Off"), lastKnownApChannel);
               oledDisplay->drawStr(0, oledRow, charCurrentApStatus);
 
               char charCurrentApSsid[charPerRow+1];
@@ -426,7 +426,7 @@ class QuinLEDAnPentaUsermod : public Usermod
               sprintf(charCurrentApPass, "PW: %s", lastKnownApPass);
               oledDisplay->drawStr(0, oledRow + 20, charCurrentApPass);
 
-              // IP is hardcoded / no var exists in WLED at the time this mod was coded, so also hardcode it here
+              // IP is hardcoded / no var exists in ISTAR at the time this mod was coded, so also hardcode it here
               oledDisplay->drawStr(0, oledRow + 30, "IP: 4.3.2.1");
             }
 
@@ -489,8 +489,8 @@ class QuinLEDAnPentaUsermod : public Usermod
       * loop() is called continuously. Here you can check for events, read sensors, etc.
       *
       * Tips:
-      * 1. You can use "if (WLED_CONNECTED)" to check for a successful network connection.
-      *    Additionally, "if (WLED_MQTT_CONNECTED)" is available to check for a connection to an MQTT broker.
+      * 1. You can use "if (ISTAR_CONNECTED)" to check for a successful network connection.
+      *    Additionally, "if (ISTAR_MQTT_CONNECTED)" is available to check for a connection to an MQTT broker.
       *
       * 2. Try to avoid using the delay() function. NEVER use delays longer than 10 milliseconds.
       *    Instead, use a timer check as shown here.

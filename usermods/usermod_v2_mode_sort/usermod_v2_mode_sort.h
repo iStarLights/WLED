@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 
 //
 // v2 usermod that provides data about modes and

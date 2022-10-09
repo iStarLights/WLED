@@ -34,18 +34,18 @@ body:
     id: install_format
     attributes:
       label: Install Method
-      description: How did you install WLED?
+      description: How did you install ISTAR?
       options:
-        - Binary from WLED.me
+        - Binary from wled.me
         - Self-Compiled
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: What version of WLED?
+      label: What version of ISTAR?
       description: You can find this in by going to Config -> Security & Updates -> Scroll to Bottom. Copy and paste the entire line after "Server message"
-      placeholder: "e.g. WLED 0.13.1 (build 2203150)"
+      placeholder: "e.g. ISTAR 0.13.1 (build 2203150)"
     validations:
       required: true
   - type: dropdown

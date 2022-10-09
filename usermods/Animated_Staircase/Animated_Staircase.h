@@ -8,7 +8,7 @@
  * See the accompanying README.md file for more info.
  */
 #pragma once
-#include "wled.h"
+#include "istar.h"
 
 class Animated_Staircase : public Usermod {
   private:
@@ -94,7 +94,7 @@ class Animated_Staircase : public Usermod {
     void publishMqtt(bool bottom, const char* state)
     {
       //Check if MQTT Connected, otherwise it will crash the 8266
-      if (WLED_MQTT_CONNECTED){
+      if (ISTAR_MQTT_CONNECTED){
         char subuf[64];
         sprintf_P(subuf, PSTR("%s/motion/%d"), mqttDeviceTopic, (int)bottom);
         mqtt->publish(subuf, 0, false, state);
@@ -342,7 +342,7 @@ class Animated_Staircase : public Usermod {
 
     /**
      * handling of MQTT message
-     * topic only contains stripped topic (part after /wled/MAC)
+     * topic only contains stripped topic (part after /istar/MAC)
      * topic should look like: /swipe with amessage of [up|down]
      */
     bool onMqttMessage(char* topic, char* payload) {

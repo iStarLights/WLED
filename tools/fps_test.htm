@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>WLED frame rate test tool</title>
+    <title>ISTAR frame rate test tool</title>
     <style>
         body {
             background-color: #222;
@@ -116,7 +116,7 @@
         }
         function req(command) {
             var ip = document.getElementById('ip').value;
-            if (!ip) {alert("Please enter WLED IP"); return;}
+            if (!ip) {alert("Please enter ISTAR IP"); return;}
             if (ip != localStorage.getItem('locIpFps')) localStorage.setItem('locIpFps', document.getElementById('ip').value);
             var url = command ? `http://${ip}/json/si` : `http://${ip}/json/effects`;
             var type = command ? 'post':'get';
@@ -209,7 +209,7 @@
 </head>
 <body onload="S()">
     <h2>Starship monitoring dashboard</h2>
-    (or rather just a WLED frame rate tester lol)<br><br>
+    (or rather just a ISTAR frame rate tester lol)<br><br>
     IP: <input id="ip" /><br>
     Time per effect: <input type=number id=secs value=5 max=15 min=2 />s<br>
     Effects to test:

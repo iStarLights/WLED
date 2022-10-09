@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 #include <Dusk2Dawn.h>
 
 /*
@@ -23,7 +23,7 @@
  *          select "What's here?". At the bottom, you’ll see a card with the
  *          coordinates.
  * 
- *      Once configured, copy UserMod_SunRiseAndSet.h to the sketch file (the same folder as wled00.ino exists), 
+ *      Once configured, copy UserMod_SunRiseAndSet.h to the sketch file (the same folder as istar00.ino exists), 
  *      and then edit "usermods_list.cpp":
  *          Add '#include "UserMod_SunRiseAndSet.h"' in the 'includes' area
  *          Add 'usermods.add(new UserMod_SunRiseAndSet());' in the registerUsermods() area

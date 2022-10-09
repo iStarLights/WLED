@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "wled.h"
+#include "istar.h"
 //Intiating code for QuinLED Dig-Uno temp sensor
 //Uncomment Celsius if that is your prefered temperature scale
 #include <DallasTemperature.h> //Dallastemperature sensor

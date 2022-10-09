@@ -4,11 +4,11 @@
 #error The "PWM fan" usermod requires "Dallas Temeprature" usermod to function properly.
 #endif
 
-#include "wled.h"
+#include "istar.h"
 
 // PWM & tacho code curtesy of @KlausMu
 // https://github.com/KlausMu/esp32-fan-controller/tree/main/src
-// adapted for WLED usermod by @blazoncek
+// adapted for ISTAR usermod by @blazoncek
 
 #ifndef TACHO_PIN
   #define TACHO_PIN -1
@@ -105,7 +105,7 @@ class PWMFanUsermod : public Usermod {
 
       #ifdef ESP8266
       analogWriteRange(255);
-      analogWriteFreq(WLED_PWM_FREQ);
+      analogWriteFreq(ISTAR_PWM_FREQ);
       #else
       pwmChannel = pinManager.allocateLedc(1);
       if (pwmChannel == 255) { //no more free LEDC channels
@@ -210,7 +210,7 @@ class PWMFanUsermod : public Usermod {
 
     /*
      * addToJsonInfo() can be used to add custom entries to the /json/info part of the JSON API.
-     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the WLED web UI.
+     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the ISTAR web UI.
      * Below it is shown how this could be used for e.g. a light sensor
      */
     void addToJsonInfo(JsonObject& root) {
@@ -239,7 +239,7 @@ class PWMFanUsermod : public Usermod {
 
     /*
      * addToConfig() can be used to add custom persistent settings to the cfg.json file in the "um" (usermod) object.
-     * It will be called by WLED when settings are actually saved (for example, LED settings are saved)
+     * It will be called by ISTAR when settings are actually saved (for example, LED settings are saved)
      * If you want to force saving the current state, use serializeConfig() in your loop().
      * 
      * CAUTION: serializeConfig() will initiate a filesystem write operation.
@@ -265,7 +265,7 @@ class PWMFanUsermod : public Usermod {
 
     /*
      * readFromConfig() can be used to read back the custom settings you added with addToConfig().
-     * This is called by WLED when settings are loaded (currently this only happens once immediately after boot)
+     * This is called by ISTAR when settings are loaded (currently this only happens once immediately after boot)
      * 
      * readFromConfig() is called BEFORE setup(). This means you can use your persistent values in setup() (e.g. pin assignments, buffer sizes),
      * but also that if you want to write persistent values to a dynamic buffer, you'd need to allocate it here instead of in setup.

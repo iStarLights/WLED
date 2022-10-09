@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 #include <Wire.h>
 #include <BH1750.h>
 
@@ -88,7 +88,7 @@ public:
     {
       lastLux = lux;
       lastSend = millis();
-      if (WLED_MQTT_CONNECTED)
+      if (ISTAR_MQTT_CONNECTED)
       {
         char subuf[45];
         strcpy(subuf, mqttDeviceTopic);

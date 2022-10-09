@@ -53,7 +53,7 @@ function adoptVersionAndRepo(html) {
     repoUrl = repoUrl.replace(/^git\+/, "");
     repoUrl = repoUrl.replace(/\.git$/, "");
     // Replace we
-    html = strReplace(html, "https://github.com/atuline/WLED", repoUrl);
+    html = strReplace(html, "https://github.com/atuline/ISTAR", repoUrl);
     html = strReplace(html, "https://github.com/Aircoookie/WLED", repoUrl);
   }
 
@@ -194,10 +194,10 @@ function writeChunks(srcDir, specs, resultFile) {
   fs.writeFileSync(resultFile, src);
 }
 
-writeHtmlGzipped("wled00/data/index.htm", "wled00/html_ui.h");
+writeHtmlGzipped("istar00/data/index.htm", "istar00/html_ui.h");
 
 writeChunks(
-  "wled00/data",
+  "istar00/data",
   [
     {
       file: "style.css",
@@ -267,7 +267,7 @@ writeChunks(
             "function GetV() {var d=document;\n"
           );
         return `
-#ifdef WLED_ENABLE_DMX
+#ifdef ISTAR_ENABLE_DMX
 ${nocss}
 #else
 const char PAGE_settings_dmx[] PROGMEM = R"=====()=====";
@@ -350,11 +350,11 @@ const char PAGE_settings_dmx[] PROGMEM = R"=====()=====";
           ),
     }
   ],
-  "wled00/html_settings.h"
+  "istar00/html_settings.h"
 );
 
 writeChunks(
-  "wled00/data",
+  "istar00/data",
   [
     {
       file: "usermod.htm",
@@ -383,7 +383,7 @@ writeChunks(
       method: "plaintext",
       filter: "html-minify",
       mangle: (str) => `
-#ifdef WLED_ENABLE_DMX
+#ifdef ISTAR_ENABLE_DMX
 ${str.replace(/function FM\(\)[ ]?\{/gms, "function FM() {%DMXVARS%\n")}
 #else
 const char PAGE_dmxmap[] PROGMEM = R"=====()=====";
@@ -436,5 +436,5 @@ const char PAGE_dmxmap[] PROGMEM = R"=====()=====";
       method: "binary",
     },
   ],
-  "wled00/html_other.h"
+  "istar00/html_other.h"
 );

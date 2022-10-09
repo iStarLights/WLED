@@ -1,13 +1,13 @@
-#include "wled.h"
+#include "istar.h"
 
 /*
- * Usermods allow you to add own functionality to WLED more easily
- * See: https://github.com/Aircoookie/WLED/wiki/Add-own-functionality
+ * Usermods allow you to add own functionality to ISTAR more easily
+ * See: https://github.com/Aircoookie/ISTAR/wiki/Add-own-functionality
  * 
  * This is Stairway-Wipe as a v2 usermod.
  * 
  * Using this usermod:
- * 1. Copy the usermod into the sketch folder (same folder as wled00.ino)
+ * 1. Copy the usermod into the sketch folder (same folder as istar00.ino)
  * 2. Register the usermod by adding #include "stairway-wipe-usermod-v2.h" in the top and registerUsermod(new StairwayWipeUsermod()) in the bottom of usermods_list.cpp
  */
 

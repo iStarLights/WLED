@@ -1,6 +1,6 @@
 @echo off
 SETLOCAL
-SET FWPATH=c:\path\to\your\WLED\build_output\firmware
+SET FWPATH=c:\path\to\your\ISTAR\build_output\firmware
 GOTO ESPS
 
 :UPDATEONE

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 #if defined(ESP32)
 #warning "Usermod FixUnreachableNetServices works only with ESP8266 builds"
 class FixUnreachableNetServices : public Usermod
@@ -13,9 +13,9 @@ class FixUnreachableNetServices : public Usermod
 
 /*
  * This usermod performs a ping request to the local IP address every 60 seconds. 
- * By this procedure the net services of WLED remains accessible in some problematic WLAN environments.
+ * By this procedure the net services of ISTAR remains accessible in some problematic WLAN environments.
  * 
- * Usermods allow you to add own functionality to WLED more easily
+ * Usermods allow you to add own functionality to ISTAR more easily
  * See: https://github.com/Aircoookie/WLED/wiki/Add-own-functionality
  * 
  * v2 usermods are class inheritance based and can (but don't have to) implement more functions, each of them is shown in this example.
@@ -27,7 +27,7 @@ class FixUnreachableNetServices : public Usermod
  * You may also use multiple .h and .cpp files.
  * 
  * Using a usermod:
- * 1. Copy the usermod into the sketch folder (same folder as wled00.ino)
+ * 1. Copy the usermod into the sketch folder (same folder as istar00.ino)
  * 2. Register the usermod by adding #include "usermod_filename.h" in the top and registerUsermod(new MyUsermodClass()) in the bottom of usermods_list.cpp
  */
 
@@ -45,7 +45,7 @@ private:
   bool m_updateConfig = false;
 
 public:
-  //Functions called by WLED
+  //Functions called by ISTAR
 
   /**
    * setup() is called once at boot. WiFi is not yet connected at this point.
@@ -92,7 +92,7 @@ public:
 
   /**
    * addToJsonInfo() can be used to add custom entries to the /json/info part of the JSON API.
-   * Creating an "u" object allows you to add custom key/value pairs to the Info section of the WLED web UI.
+   * Creating an "u" object allows you to add custom key/value pairs to the Info section of the ISTAR web UI.
    * Below it is shown how this could be used for e.g. a light sensor
    */
   void addToJsonInfo(JsonObject &root)

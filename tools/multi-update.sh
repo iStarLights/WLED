@@ -1,5 +1,5 @@
 #!/bin/bash
-FWPATH=/path/to/your/WLED/build_output/firmware
+FWPATH=/path/to/your/ISTAR/build_output/firmware
 
 update_one() {
 if [ -f $FWPATH/$2 ]; then

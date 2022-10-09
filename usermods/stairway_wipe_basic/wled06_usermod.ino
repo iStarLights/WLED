@@ -1,8 +1,8 @@
 /*
- * This file allows you to add own functionality to WLED more easily
+ * This file allows you to add own functionality to ISTAR more easily
  * See: https://github.com/Aircoookie/WLED/wiki/Add-own-functionality
- * EEPROM bytes 2750+ are reserved for your custom use case. (if you extend #define EEPSIZE in wled_eeprom.h)
- * bytes 2400+ are currently ununsed, but might be used for future wled features
+ * EEPROM bytes 2750+ are reserved for your custom use case. (if you extend #define EEPSIZE in istar_eeprom.h)
+ * bytes 2400+ are currently ununsed, but might be used for future istar features
  */
 
 //Use userVar0 and userVar1 (API calls &U0=,&U1=, uint16_t)
@@ -26,7 +26,7 @@ void userConnected()
 
 }
 
-//loop. You can use "if (WLED_CONNECTED)" to check for successful connection
+//loop. You can use "if (ISTAR_CONNECTED)" to check for successful connection
 void userLoop()
 {
   //userVar0 (U0 in HTTP API):

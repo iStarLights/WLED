@@ -1,6 +1,6 @@
 #pragma once
 
-#include "wled.h"
+#include "istar.h"
 #include "OneWire.h"
 
 //Pin defaults for QuinLed Dig-Uno if not overriden
@@ -61,7 +61,7 @@ class UsermodTemperature : public Usermod {
         oneWire->skip();                      // skip ROM
         oneWire->write(0xBE);                 // read (temperature) from EEPROM
         oneWire->read_bytes(data, 9);         // first 2 bytes contain temperature
-        #ifdef WLED_DEBUG
+        #ifdef ISTAR_DEBUG
         if (OneWire::crc8(data,8) != data[8]) {
           DEBUG_PRINTLN(F("CRC error reading temperature."));
           for (byte i=0; i < 9; i++) DEBUG_PRINTF("0x%02X ", data[i]);
@@ -188,7 +188,7 @@ class UsermodTemperature : public Usermod {
         }
         errorCount = 0;
 
-        if (WLED_MQTT_CONNECTED) {
+        if (ISTAR_MQTT_CONNECTED) {
           char subuf[64];
           strcpy(subuf, mqttDeviceTopic);
           if (temperature > -100.0f) {
@@ -207,7 +207,7 @@ class UsermodTemperature : public Usermod {
     }
 
     /*
-     * API calls te enable data exchange between WLED modules
+     * API calls te enable data exchange between ISTAR modules
      */
     inline float getTemperatureC() {
       return (float)temperature;
@@ -218,7 +218,7 @@ class UsermodTemperature : public Usermod {
 
     /*
      * addToJsonInfo() can be used to add custom entries to the /json/info part of the JSON API.
-     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the WLED web UI.
+     * Creating an "u" object allows you to add custom key/value pairs to the Info section of the ISTAR web UI.
      * Below it is shown how this could be used for e.g. a light sensor
      */
     void addToJsonInfo(JsonObject& root) {
