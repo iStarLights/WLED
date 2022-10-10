@@ -53,7 +53,7 @@ function adoptVersionAndRepo(html) {
     repoUrl = repoUrl.replace(/^git\+/, "");
     repoUrl = repoUrl.replace(/\.git$/, "");
     // Replace we
-    html = strReplace(html, "https://github.com/atuline/ISTAR", repoUrl);
+    html = strReplace(html, "https://github.com/atuline/WLED", repoUrl);
     html = strReplace(html, "https://github.com/Aircoookie/WLED", repoUrl);
   }
 
