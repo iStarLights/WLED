@@ -362,7 +362,7 @@ void WLED::setup()
 #endif
   updateFSInfo();
 
-  strcpy_P(apSSID, PSTR("WLED-AP"));  // otherwise it is empty on first boot until config is saved
+  strcpy_P(apSSID, PSTR("iStar-AP"));  // otherwise it is empty on first boot until config is saved
   DEBUG_PRINTLN(F("Reading config"));
   deserializeConfigFromFS();
 
@@ -401,9 +401,9 @@ void WLED::setup()
   escapedMac.replace(":", "");
   escapedMac.toLowerCase();
   // fill in unique mdns default
-  if (strcmp(cmDNS, "x") == 0) sprintf_P(cmDNS, PSTR("wled-%*s"), 6, escapedMac.c_str() + 6);
-  if (mqttDeviceTopic[0] == 0) sprintf_P(mqttDeviceTopic, PSTR("wled/%*s"), 6, escapedMac.c_str() + 6);
-  if (mqttClientID[0] == 0)    sprintf_P(mqttClientID, PSTR("WLED-%*s"), 6, escapedMac.c_str() + 6);
+  if (strcmp(cmDNS, "x") == 0) sprintf_P(cmDNS, PSTR("istar-%*s"), 6, escapedMac.c_str() + 6);
+  if (mqttDeviceTopic[0] == 0) sprintf_P(mqttDeviceTopic, PSTR("istar/%*s"), 6, escapedMac.c_str() + 6);
+  if (mqttClientID[0] == 0)    sprintf_P(mqttClientID, PSTR("iStar-%*s"), 6, escapedMac.c_str() + 6);
 
 #ifdef WLED_ENABLE_ADALIGHT
   if (Serial.available() > 0 && Serial.peek() == 'I') handleImprovPacket();
@@ -478,7 +478,7 @@ void WLED::initAP(bool resetAP)
     return;
 
   if (resetAP) {
-    strcpy_P(apSSID, PSTR("WLED-AP"));
+    strcpy_P(apSSID, PSTR("iStar-AP"));
     strcpy_P(apPass, PSTR(DEFAULT_AP_PASS));
   }
   DEBUG_PRINT(F("Opening access point "));
@@ -684,8 +684,8 @@ void WLED::initInterfaces()
 
     DEBUG_PRINTLN(F("mDNS started"));
     MDNS.addService("http", "tcp", 80);
-    MDNS.addService("wled", "tcp", 80);
-    MDNS.addServiceTxt("wled", "tcp", "mac", escapedMac.c_str());
+    MDNS.addService("istar", "tcp", 80);
+    MDNS.addServiceTxt("istar", "tcp", "mac", escapedMac.c_str());
   }
   server.begin();
 

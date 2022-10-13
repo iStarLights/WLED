@@ -44,9 +44,9 @@
 */
 
 //factory defaults LED setup
-//#define PIXEL_COUNTS 30, 30, 30, 30
-//#define DATA_PINS 16, 1, 3, 4
-//#define DEFAULT_LED_TYPE TYPE_WS2812_RGB
+//#define PIXEL_COUNTS 300, 300, 300, 300
+//#define DATA_PINS 16, 3, 1, 4
+#define DEFAULT_LED_TYPE TYPE_SK6812_RGBW
 
 #ifndef PIXEL_COUNTS
   #define PIXEL_COUNTS DEFAULT_LED_COUNT
@@ -61,7 +61,7 @@
 #endif
 
 #ifndef DEFAULT_LED_COLOR_ORDER
-  #define DEFAULT_LED_COLOR_ORDER COL_ORDER_GRB  //default to GRB
+  #define DEFAULT_LED_COLOR_ORDER COL_ORDER_RGB  //default to RGB
 #endif
 
 

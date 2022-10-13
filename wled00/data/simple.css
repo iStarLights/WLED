@@ -437,6 +437,7 @@ output.sliderbubbleshow {
 
 input[type=range] {
 	-webkit-appearance: none;
+	appearance: none;
 	width: 100%;
 	padding: 0;
 	margin: 0;
@@ -461,6 +462,7 @@ input[type=range]::-webkit-slider-thumb {
 	background: var(--c-f);
 	cursor: pointer;
 	-webkit-appearance: none;
+	appearance: none;
 	margin-top: 4px;
 }
 input[type=range]::-moz-range-track {
@@ -482,9 +484,12 @@ input[type=range]::-moz-range-thumb {
 #Colors input[type=range]::-moz-range-thumb {
 	border: 2px solid var(--c-1);
 }
+.hide {
+	display: none !important;
+}
 
 #Presets .list {
-	max-height: 215px;
+	max-height: fit-content;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	width: 280px;
@@ -522,6 +527,13 @@ input[type=range]::-moz-range-thumb {
 	margin: 10px auto 0;
 }
 
+#liveview {
+	height: 4px;
+	display: none;
+	width: 100%;
+	border: 0px;
+}
+
 .btn {
 	margin: 10px auto 0;
 	width: 280px;
@@ -533,7 +545,9 @@ input[type=range]::-moz-range-thumb {
 	border-radius: 25px;
 	transition-duration: 0.3s;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-webkit-transform:translate3d(0,0,0);
+	transform:translate3d(0,0,0);
 	overflow: clip;
 	text-overflow: clip;
 	min-height: 40px;
@@ -610,13 +624,14 @@ input[type=number]:focus, input[type=text]:focus {
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
+	appearance: none;
 }
 
 .pid {
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	padding: 12px 0px 0px 12px;
+	padding: 8px 0px 0px 12px;
 	font-size: 16px;
 	width: 20px;
 	text-align: center;
@@ -930,4 +945,8 @@ input[type=text].fnd:not(:placeholder-shown), input[type=text].fnd:hover {
 		margin-top: 0px !important;
 		float: none;
 	}
+}
+
+#buttonNodesSmpl {
+	display: none;
 }

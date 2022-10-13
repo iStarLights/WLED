@@ -1221,7 +1221,7 @@ uint16_t mode_fireworks() {
   }
   return FRAMETIME;
 }
-static const char _data_FX_MODE_FIREWORKS[] PROGMEM = "Fireworks@,Frequency;!,!,;!;ix=192,pal=11,1d,2d";
+static const char _data_FX_MODE_FIREWORKS[] PROGMEM = "Fireworks@,Frequency;!,!,;!;ix=192,pal=11,1d";
 
 
 //Twinkling LEDs running. Inspired by https://github.com/kitesurfer1404/WS2812FX/blob/master/src/custom/Rain.h
@@ -1256,7 +1256,7 @@ uint16_t mode_rain()
   }
   return mode_fireworks();
 }
-static const char _data_FX_MODE_RAIN[] PROGMEM = "Rain@!,Spawning rate;!,!,;;ix=128,pal=0,1d,2d";
+static const char _data_FX_MODE_RAIN[] PROGMEM = "Rain@!,Spawning rate;!,!,;;ix=128,pal=0,1d";
 
 
 /*
@@ -1894,7 +1894,7 @@ uint16_t mode_pride_2015(void)
   SEGENV.aux0 = sHue16;
   return FRAMETIME;
 }
-static const char _data_FX_MODE_PRIDE_2015[] PROGMEM = "Pride 2015@!,;;;1d";
+static const char _data_FX_MODE_PRIDE_2015[] PROGMEM = "Pride@!,;;;1d";
 
 
 //eight colored dots, weaving in and out of sync with each other
@@ -2684,7 +2684,7 @@ uint16_t mode_halloween_eyes()
   
   return FRAMETIME;
 }
-static const char _data_FX_MODE_HALLOWEEN_EYES[] PROGMEM = "Halloween Eyes@Duration,Eye fade time;!,!,;!;1d,2d";
+static const char _data_FX_MODE_HALLOWEEN_EYES[] PROGMEM = "Halloween Eyes@Duration,Eye fade time;!,!,;!;1d";
 
 
 //Speed slider sets amount of LEDs lit, intensity sets unlit
@@ -3363,7 +3363,7 @@ uint16_t mode_exploding_fireworks(void)
   return FRAMETIME;  
 }
 #undef MAX_SPARKS
-static const char _data_FX_MODE_EXPLODING_FIREWORKS[] PROGMEM = "Fireworks 1D@Gravity,Firing side;!,!,;!=11;ix=128,1d,2d";
+static const char _data_FX_MODE_EXPLODING_FIREWORKS[] PROGMEM = "Fireworks 1D@Gravity,Firing side;!,!,;!=11;ix=128,1d";
 
 
 /*
@@ -7454,8 +7454,9 @@ void WS2812FX::setupEffectData() {
   addEffect(FX_MODE_TV_SIMULATOR, &mode_tv_simulator, _data_FX_MODE_TV_SIMULATOR);
   addEffect(FX_MODE_DYNAMIC_SMOOTH, &mode_dynamic_smooth, _data_FX_MODE_DYNAMIC_SMOOTH);
 
+
+#ifndef WLED_DISABLE_2D_FX
   // --- 2D non-audio effects ---
-#ifndef WLED_DISABLE_2D
   addEffect(FX_MODE_2DSPACESHIPS, &mode_2Dspaceships, _data_FX_MODE_2DSPACESHIPS);
   addEffect(FX_MODE_2DCRAZYBEES, &mode_2Dcrazybees, _data_FX_MODE_2DCRAZYBEES);
   addEffect(FX_MODE_2DGHOSTRIDER, &mode_2Dghostrider, _data_FX_MODE_2DGHOSTRIDER);
@@ -7483,14 +7484,14 @@ void WS2812FX::setupEffectData() {
   addEffect(FX_MODE_2DMETABALLS, &mode_2Dmetaballs, _data_FX_MODE_2DMETABALLS);
   addEffect(FX_MODE_2DPULSER, &mode_2DPulser, _data_FX_MODE_2DPULSER);
   addEffect(FX_MODE_2DDRIFT, &mode_2DDrift, _data_FX_MODE_2DDRIFT);
+#endif // WLED_DISABLE_2D
+#ifndef WLED_DISABLE_SFX
   // --- 2D audio effects ---
   addEffect(FX_MODE_2DWAVERLY, &mode_2DWaverly, _data_FX_MODE_2DWAVERLY);
   addEffect(FX_MODE_2DSWIRL, &mode_2DSwirl, _data_FX_MODE_2DSWIRL);
   addEffect(FX_MODE_2DAKEMI, &mode_2DAkemi, _data_FX_MODE_2DAKEMI);
   addEffect(FX_MODE_2DGEQ, &mode_2DGEQ, _data_FX_MODE_2DGEQ);
   addEffect(FX_MODE_2DFUNKYPLANK, &mode_2DFunkyPlank, _data_FX_MODE_2DFUNKYPLANK);
-#endif // WLED_DISABLE_2D
-
   // --- 1D audio effects ---
   addEffect(FX_MODE_PIXELWAVE, &mode_pixelwave, _data_FX_MODE_PIXELWAVE);
   addEffect(FX_MODE_JUGGLES, &mode_juggles, _data_FX_MODE_JUGGLES);
@@ -7516,4 +7517,5 @@ void WS2812FX::setupEffectData() {
   addEffect(FX_MODE_DJLIGHT, &mode_DJLight, _data_FX_MODE_DJLIGHT);
   addEffect(FX_MODE_BLURZ, &mode_blurz, _data_FX_MODE_BLURZ);
   addEffect(FX_MODE_ROCKTAVES, &mode_rocktaves, _data_FX_MODE_ROCKTAVES);
+#endif
 }

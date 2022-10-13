@@ -406,7 +406,7 @@ void handleSettingsSet(AsyncWebServerRequest *request, byte subPage)
       #ifdef WLED_ADD_EEPROM_SUPPORT
       clearEEPROM();
       #endif
-      serveMessage(request, 200, F("All Settings erased."), F("Connect to WLED-AP to setup again"),255);
+      serveMessage(request, 200, F("All Settings erased."), F("Connect to iStar-AP to setup again"),255);
       doReboot = true;
     }
 

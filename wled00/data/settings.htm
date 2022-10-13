@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
-	<title>WLED Settings</title>
+	<meta names="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="theme-color" content="#240047">
+	<title>iStar Lights Settings</title>
 	<script>
 		var d=document;
 		var loc = false, locip;
@@ -31,7 +34,7 @@
 				loc = true;
 				locip = localStorage.getItem('locIp');
 				if (!locip) {
-					locip = prompt("File Mode. Please enter WLED IP!");
+					locip = prompt("File Mode. Please enter iStar IP!");
 					localStorage.setItem('locIp', locip);
 				}
 			}
@@ -47,7 +50,7 @@
 			margin: 0;
 		}
 		html {
-			--h: 9vh;
+			--h: 10vh;
 		}
 		button {
 			background: #333;
@@ -66,14 +69,14 @@
 </head>
 <body onload="S()">
 <button type=submit id="b" onclick="window.location='/'">Back</button>
-<button type="submit" onclick="window.location='./settings/wifi'">WiFi Setup</button>
+<button type="submit" onclick="window.location='./settings/wifi'">WiFi Settings</button>
 <button type="submit" onclick="window.location='./settings/leds'">LED Preferences</button>
-<button type="submit" onclick="window.location='./settings/2D'">2D Configuration</button>
-<button type="submit" onclick="window.location='./settings/ui'">User Interface</button>
+<button id="2dbtn" style="display: none;" type="submit" onclick="window.location='./settings/2D'">2D Configuration</button>
+<button type="submit" onclick="window.location='./settings/ui'">User Settings</button>
 <button id="dmxbtn" style="display: none;" type="submit" onclick="window.location='./settings/dmx'">DMX Output</button>
-<button type="submit" onclick="window.location='./settings/sync'">Sync Interfaces</button>
-<button type="submit" onclick="window.location='./settings/time'">Time & Macros</button>
-<button type="submit" onclick="window.location='./settings/um'">Usermods</button>
+<button type="submit" onclick="window.location='./settings/sync'">Syncing</button>
+<button type="submit" onclick="window.location='./settings/time'">Time & Schedules</button>
+<button type="submit" onclick="window.location='./settings/um'">Extras</button>
 <button type="submit" onclick="window.location='./settings/sec'">Security & Updates</button>
 </body>
 </html>

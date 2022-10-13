@@ -17,7 +17,7 @@ void setStaticContentCacheHeaders(AsyncWebServerResponse *response);
 // define flash strings once (saves flash memory)
 static const char s_redirecting[] PROGMEM = "Redirecting...";
 static const char s_content_enc[] PROGMEM = "Content-Encoding";
-static const char s_unlock_ota [] PROGMEM = "Please unlock OTA in security settings!";
+static const char s_unlock_ota [] PROGMEM = "Please unlock WiFi Updates in security settings!";
 static const char s_unlock_cfg [] PROGMEM = "Please unlock settings using PIN code!";
 
 //Is this an IP?

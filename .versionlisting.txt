@@ -1,0 +1,614 @@
+Abraham Lake 
+North Saskatchewan River 
+Hudson Bay 
+53.7 
+man-made Water reservoir reservoir
+ -
+ Adolphus Lake 
+Smoky River 
+Arctic Ocean 
+0.18 
+a contributing River source headwater mountain glacial lake
+--
+ 
+Lake Agnes (Alberta) Lake Agnes 
+Bow River 
+Hudson Bay 
+0.52 a contributing River source headwater mountain glacial lake
+--
+ 
+Amisk Lake (Alberta) Amisk Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+5.3 
+--
+ 
+Angle Lake (Alberta) Angle Lake 
+North Saskatchewan River 
+Hudson Bay 
+--
+ 
+Lake Annette (Alberta) Lake Annette 
+Athabasca River 
+Arctic Ocean 
+a contributing River source headwater mountain glacial lake
+--
+ 
+Lake Athabasca 
+Slave River 
+Arctic Ocean 7,850 
+two thirds in Saskatchewan
+--
+ 
+Baptiste Lake (Alberta) Baptiste Lake 
+Athabasca River 
+Arctic Ocean 
+9.8 
+--
+ 
+Barrier Lake 
+Kananaskis River 
+Hudson Bay 2.6 
+man-made Water reservoir reservoir
+--
+ 
+Battle Lake (Alberta) Battle Lake 
+Battle River (Canada) Battle River 
+Hudson Bay 
+4.6 
+--
+ Bearhills Lake 
+Battle River 
+Hudson Bay 
+ 
+--
+ 
+Beauvais Lake (Alberta) Beauvais Lake 
+Oldman River 
+Hudson Bay 
+0.9 
+--
+ 
+Beauvert Lake (Alberta) Beauvert Lake 
+Athabasca River 
+Arctic Ocean 
+0.4 
+--
+ 
+Beaver Lake (Alberta) Beaver Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+33.1 
+--
+ 
+Beaverhill Lake 
+North Saskatchewan River 
+Hudson Bay 
+139 
+Beaverhill Natural Area is part of Western Hemisphere Shorebird Reserve Network
+--
+ 
+Lac la Biche (Alberta) Lac la Biche 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+236 
+--
+ 
+Big Lake (Alberta) Big Lake 
+Sturgeon River (Alberta) Sturgeon River 
+Hudson Bay 
+21.4 
+--
+ 
+Bistcho Lake 
+Petitot River 
+Arctic Ocean 
+426 
+--
+ 
+Bonnie Lake (Alberta) Bonnie Lake 
+North Saskatchewan River 
+Hudson Bay 
+3.77 
+--
+ 
+Bonnie Lake (Alberta) rocky river 
+North Saskatchewan River 
+Hudson Bay 
+3.77 
+--
+ 
+Bourgeau Lake 
+
+--
+ 
+Bow Lake (Alberta) Bow Lake 
+Bow River 
+Hudson Bay 
+3.21 a contributing River source headwater mountain glacial lake
+--
+ 
+Buck Lake (Alberta) Buck Lake 
+North Saskatchewan River 
+Hudson Bay 
+25.4 
+--
+ 
+Brûlé Lake (Alberta) Brûlé Lake 
+Athabasca River 
+Arctic Ocean 
+14.5 
+lake is formed along the Athabasca River
+--
+ 
+Buffalo Lake (Alberta) Buffalo Lake 
+Red Deer River 
+Hudson Bay 
+93.5 
+--
+ 
+Calling Lake 
+Athabasca River 
+Arctic Ocean 
+134 
+--
+ 
+Cardinal Lake 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+50 
+--
+ 
+Chester Lake (Alberta) Chester Lake 
+Spray River 
+Hudson Bay 
+0.51 a contributing River source headwater mountain glacial lake
+--
+ 
+Chestermere Lake 
+Bow River 
+Hudson Bay 
+2.7 
+man-made Water reservoir reservoir
+--
+ 
+Chip Lake 
+Lobstick River 
+Arctic Ocean 
+73 
+
+--
+ 
+Christina Lake (Alberta) Christina Lake 
+Athabasca River 
+Arctic Ocean 
+21.3 
+--
+ 
+Lake Claire (Alberta) Lake Claire 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+1,436 
+largest lake completely in Alberta
+--
+ 
+Coal Lake (Alberta) Coal Lake 
+Battle River (Canada) Battle River 
+Hudson Bay 
+10.9 ribbon lake
+--
+ 
+Cold Lake (Alberta) Cold Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+373 
+partly in Saskatchewan
+--
+ 
+Crawling Valley Reservoir 
+South Saskatchewan River 
+Hudson Bay 
+25.1 
+ man-made Water reservoir reservoir
+--
+ 
+Driedmeat Lake (Alberta) Driedmeat Lake 
+Battle River 
+Hudson Bay 
+16.5 ribbon lake
+--
+ 
+Elbow Lake (Alberta) Elbow Lake 
+Elbow River 
+Hudson Bay 
+0.53 
+--
+ 
+Elkwater Lake (Alberta) Elkwater Lake 
+South Saskatchewan River 
+Hudson Bay 
+2.31 
+--
+ 
+Frank Lake (Alberta) Frank Lake 
+South Saskatchewan River 
+Hudson Bay 
+43.74 
+
+--
+ 
+Ghost Lake Bow River 
+Hudson Bay 11.6 
+man-made Water reservoir reservoir
+--
+ 
+Gleniffer Lake (Alberta) Gleniffer Lake Red Deer River Hudson Bay 
+17.6 
+man-made Water reservoir reservoir
+--
+ 
+Glenmore Reservoir 
+Elbow River 
+Hudson Bay 
+3.8 
+man-made Water reservoir reservoir
+--
+ 
+Gull Lake (Alberta) Gull Lake 
+Red Deer River 
+Hudson Bay 
+80.6 
+--
+ 
+Headwall Lakes 
+Kananaskis River 
+Hudson Bay 
+0.66 contributing River source headwater mountain glacial lakes (0.45+0.21km²)
+--
+ 
+Hector Lake 
+Bow River 
+Hudson Bay 
+5.23 a contributing River source headwater mountain glacial lake
+--
+ 
+Hidden Lake (Alberta) Hidden Lake 
+Bow River 
+Hudson Bay 
+0.4 a contributing River source headwater mountain glacial lake
+--
+ 
+Hoselaw Lake 
+North Saskatchewan River 
+Hudson Bay 
+0.4 
+
+--
+ 
+Isle Lake (Alberta) Isle Lake 
+North Saskatchewan River 
+Hudson Bay 
+23 
+known locally as Lake Isle
+--
+ 
+Jessie Lake, Alberta Jessie Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+5.5 
+--
+ 
+Kinikinik Lake 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+--
+ 
+Lower Kananaskis Lake 
+Kananaskis River 
+Hudson Bay 
+6.0 
+original lake expanded as man-made Water reservoir reservoir
+--
+ 
+Upper Kananaskis Lake 
+Kananaskis River 
+Hudson Bay 
+8.4 
+original lake expanded as man-made Water reservoir reservoir
+--
+ 
+Lesser Slave Lake 
+Lesser Slave River 
+Arctic Ocean 
+1,160 
+second largest lake completely in Alberta
+--
+ 
+Lake Louise (Alberta) Lake Louise 
+Bow River 
+Hudson Bay 
+0.8 a contributing River source headwater mountain glacial lake
+--
+ 
+Maligne Lake 
+Athabasca River 
+Arctic Ocean 
+19.7 a contributing River source headwater mountain glacial lake
+ -
+ Lower Mann Lake
+ Beaver River (Canada) Beaver River
+ Closed basin
+ 5.10
+ 
+ -
+ Upper Mann Lake
+ Beaver River (Canada) Beaver River
+ Closed basin
+ 4.59
+ 
+--
+ 
+McGregor Lake 
+Bow River 
+Hudson Bay 
+51.4 
+reservoir
+--
+ 
+Medicine Lake (Alberta) Medicine Lake 
+Athabasca River 
+Arctic Ocean 
+3.7 
+--
+ 
+Milk River Ridge Reservoir Milk Reservoir 
+Milk River (Montana-Alberta) Milk River 
+Gulf of Mexico 14 
+man-made Reservoir (water) reservoir
+--
+ 
+Lake Minnewanka 
+Bow River 
+Hudson Bay 
+21.5 a contributing River source headwater mountain glacial lake enlarged by dam
+--
+ 
+Moose Lake, Alberta Moose Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+40.8 
+--
+ 
+Moraine Lake 
+Bow River 
+Hudson Bay 
+0.5 a contributing River source headwater mountain glacial lake
+--
+ 
+Muriel Lake (Alberta) Muriel Lake 
+Beaver River (Canada) Beaver River 
+Closed basin 
+64.1 
+--
+ 
+Musreau Lake (Alberta) Musreau Lake Kakwa River Hudson Bay 
+5.49 
+
+--
+ 
+<span id=N"></span>Nakamun Lake (Alberta) Nakamun Lake Toad Creek Hudson Bay 3.54 
+
+--
+ 
+Lake Newell 
+Bow River 
+Hudson Bay 
+66.4 
+man-made Reservoir (water) reservoir
+--
+ 
+Lac la Nonne Pembina River (Alberta) Pembina River 
+Arctic Ocean 12.28 
+--
+ 
+Pakowki Lake 
+Milk River (Montana-Alberta) Milk River 
+Gulf of Mexico 123.7 
+largest lake in southern Alberta
+--
+ 
+Peerless Lake (Alberta) Peerless Lake 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+82.6 
+--
+ 
+Peyto Lake 
+Mistaya River 
+Hudson Bay 
+1.4 a contributing River source headwater mountain glacial lake
+--
+ 
+Pigeon Lake (Alberta) Pigeon Lake 
+Battle River (Canada) Battle River 
+Hudson Bay 
+96.7 
+--
+ 
+Pinehurst Lake 
+Sand River (Alberta) Sand River 
+Hudson Bay 
+40.7 
+--
+ 
+Primrose Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+17.7 
+Most of the lake's surface area (444km²) is located in Saskatchewan
+--
+ 
+Pyramid Lake (Alberta) Pyramid Lake 
+Athabasca River 
+Arctic Ocean 
+1.2 
+--
+ 
+Rattlesnake Lake (Alberta) Rattlesnake Lake 
+South Saskatchewan River 
+Hudson Bay 
+10.7 
+--
+ 
+Red Deer Lake (Alberta) Red Deer Lake 
+Battle River (Canada) Battle River 
+Hudson Bay 21 
+--
+ 
+Lac Sante 
+ Hudson Bay 
+
+-- 
+ 
+Saskatoon Lake (Alberta) Saskatoon Lake 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+7.47 
+--
+ 
+Sikome Lake 
+Bow River 
+Hudson Bay 
+0.4 
+man-made recreation lake in Calgary
+--
+ 
+Skeleton Lake (Alberta) Skeleton Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+7.89 
+--
+ 
+Spray Lakes Reservoir Spray Lakes 
+Bow River 
+Hudson Bay 
+19.9 man-made Reservoir (water) reservoir that was previously a string of lakes 
+--
+ 
+Lac Ste. Anne (Alberta) Lac Ste. Anne 
+North Saskatchewan River 
+Hudson Bay 
+54.5 
+--
+ 
+Steele Lake 
+Athabasca River 
+Arctic Ocean 
+6.61 
+formerly named Cross Lake because of its shape
+--
+ 
+Sturgeon Lake (Alberta) Sturgeon Lake 
+Smoky River 
+Arctic Ocean 
+49.1 
+--
+ 
+Sylvan Lake (Alberta) Sylvan Lake 
+Red Deer River 
+Hudson Bay 
+42.8 
+--
+ 
+Telford Lake 
+North Saskatchewan River 
+Hudson Bay 
+13 
+
+--
+ 
+Thunder Lake (Alberta) Thunder Lake 
+Athabasca River 
+Arctic Ocean 
+7.03 
+--
+ 
+Touchwood Lake (Alberta) Touchwood Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+29 
+--
+ 
+Utikuma Lake 
+Peace River (Canada) Peace River 
+Arctic Ocean 
+295 
+--
+ 
+Vermilion Lakes 
+Bow River 
+Hudson Bay 
+0.48 
+a string of three lakes along the Bow River
+--
+ 
+Wabamun Lake 
+North Saskatchewan River 
+Hudson Bay 
+81.8 
+--
+ 
+North Wabasca Lake 
+Wabasca River 
+Arctic Ocean 
+101.4<ref>{{Cite web title="Wabasca Lake Monitoring Project 2016 Factsheet" url=https://open.alberta.ca/dataset/c4daadb8-43a4-4103-8922-0ac347770b28/resource/c57d9c16-8d88-47e1-acc2-46854362ce35/download/wabasca-lake-monitoring-project-results-report.pdf url-status=live}}</ref> 
+
+--
+ 
+Wabasca River#Wabasca Lakes South Wabasca Lake 
+Wabasca River 
+Arctic Ocean 
+61.6 
+--
+ 
+Waterton Lake 
+Oldman River 
+Hudson Bay 
+11.6 
+partly in Montana
+--
+ 
+Gregoire Lake (Alberta) Willow Lake 
+Athabasca River 
+Arctic Ocean 25.8 
+--
+ 
+Winagami Lake 
+Athabasca River 
+Arctic Ocean 46.7 
+--
+ 
+Winefred Lake 
+Clearwater River (Saskatchewan) Clearwater River 
+Arctic Ocean 
+122.8 
+--
+ 
+Wizard Lake 
+North Saskatchewan River 
+Hudson Bay 
+2.48 
+--
+ 
+Wolf Lake (Alberta) Wolf Lake 
+Beaver River (Canada) Beaver River 
+Hudson Bay 
+31.5 
+--
+ 
+Zama Lake 
+Hay River (Canada) Hay River 
+Arctic Ocean 
+55.5 
+--
+

@@ -1,7 +1,7 @@
 //page js
 var loc = false, locip;
 var noNewSegs = false;
-var isOn = false, isInfo = false, isNodes = false, isRgbw = false, cct = false;
+var isOn = false, isInfo = false, isLv = false, isNodes = false, isRgbw = false, cct = false;
 var whites = [0,0,0];
 var selColors;
 var powered = [true];
@@ -19,6 +19,7 @@ var pJson = {}, eJson = {}, lJson = {};
 var pN = "", pI = 0, pNum = 0;
 var pmt = 1, pmtLS = 0, pmtLast = 0;
 var lastinfo = {};
+var isM = false, mw = 0, mh=0;
 var ws, cpick, ranges;
 var cfg = {
 	theme:{base:"dark", bg:{url:""}, alpha:{bg:0.6,tab:0.8}, color:{bg:""}},
@@ -161,7 +162,7 @@ async function onLoad()
 		locip = localStorage.getItem('locIp');
 		if (!locip)
 		{
-			locip = prompt("File Mode. Please enter WLED IP!");
+			locip = prompt("File Mode. Please enter iStar IP!");
 			localStorage.setItem('locIp', locip);
 		}
 	}
@@ -461,7 +462,7 @@ function populatePresets()
 		is.push(i);
 
 		cn += `<div class="lstI c pres" id="p${i}o" onclick="setPreset(${i})">`;
-		//if (cfg.comp.pid) cn += `<div class="pid">${i}</div>`;
+		if (cfg.comp.pid) cn += `<div class="pid">${i}</div>`;
 		cn += `${isPlaylist(i)?"<i class='icons btn-icon'>&#xe139;</i>":""}<span class="lstIname">${pName(i)}</span></div>`;
     	pNum++;
 	}
@@ -504,9 +505,9 @@ function populateInfo(i)
 				urows += inforow(k,val);
 		}
 	}
-	var vcn = "Kuuhaku";
-	if (i.ver.startsWith("0.14.")) vcn = "Hoshi";
-	if (i.ver.includes("-bl")) vcn = "Supāku";
+	var vcn = "Alpha Centauri";
+	if (i.ver.startsWith("0.14.")) vcn = "Abraham";
+	if (i.ver.includes("-bl")) vcn = "Proxima Centauri";
 	if (i.cn) vcn = i.cn;
 
 	cn += `v${i.ver} "${vcn}"<br><br><table>
@@ -580,8 +581,34 @@ function btype(b)
 
 function bname(o)
 {
-	if (o.name=="WLED") return o.ip;
+	if (o.name=="iStar") return o.ip;
 	return o.name;
+}
+
+function toggleLiveview()
+{
+	//WLEDSR adding liveview2D support
+	if (isInfo && isM) toggleInfo();
+	if (isNodes && isM) toggleNodes();
+	isLv = !isLv;
+
+	var lvID = "liveview";
+	if (isM) {   
+		lvID = "liveview2D"
+		if (isLv) {
+		var cn = '<iframe id="liveview2D" src="about:blank"></iframe>';
+		d.getElementById('kliveview2D').innerHTML = cn;
+		}
+
+		gId('mliveview2D').style.transform = (isLv) ? "translateY(0px)":"translateY(100%)";
+	}
+
+	gId(lvID).style.display = (isLv) ? "block":"none";
+	var url = (loc?`http://${locip}`:'') + "/" + lvID;
+	gId(lvID).src = (isLv) ? url:"about:blank";
+	gId('buttonSr').className = (isLv) ? "active":"";
+	if (!isLv && ws && ws.readyState === WebSocket.OPEN) ws.send('{"lv":false}');
+	size();
 }
 
 function populateNodes(i,n)
@@ -600,11 +627,11 @@ function populateNodes(i,n)
 			}
 		}
 	}
-	if (i.ndc < 0) cn += `Instance List is disabled.`;
-	else if (nnodes == 0) cn += `No other instances found.`;
+	if (i.ndc < 0) cn += `Controller List is disabled.`;
+	else if (nnodes == 0) cn += `No other controllers found.`;
 	cn += `<table class="infot">
 	${urows}
-	${inforow("Current instance:",i.name)}
+	${inforow("Current Controller:",i.name)}
 	</table>`;
 	gId('kn').innerHTML = cn;
 }
@@ -1049,7 +1076,7 @@ function toggleNodes()
 	gId('nodes').style.transform = (isNodes) ? "translateY(0px)":"translateY(100%)";
 	gId('buttonNodes').className = (isNodes) ? "active":"";
 }
-/*
+
 function tglBri(b=null)
 {
 	if (b===null) b = gId(`briwrap`).style.display === "block";
@@ -1057,7 +1084,7 @@ function tglBri(b=null)
 	gId('buttonBri').className = !b ? "active":"";
 	size();
 }
-*/
+
 function tglCP()
 {
 	var p = gId('buttonCP').className === "active";

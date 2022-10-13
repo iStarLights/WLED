@@ -35,11 +35,11 @@
 #define USE_GET_MILLISECOND_TIMER
 #include "FastLED.h"
 
-#define DEFAULT_BRIGHTNESS (uint8_t)127
+#define DEFAULT_BRIGHTNESS (uint8_t)255
 #define DEFAULT_MODE       (uint8_t)0
 #define DEFAULT_SPEED      (uint8_t)128
 #define DEFAULT_INTENSITY  (uint8_t)128
-#define DEFAULT_COLOR      (uint32_t)0xFFAA00
+#define DEFAULT_COLOR      (uint32_t)0x9E05FF
 #define DEFAULT_C1         (uint8_t)128
 #define DEFAULT_C2         (uint8_t)128
 #define DEFAULT_C3         (uint8_t)16
@@ -245,7 +245,7 @@
 #define FX_MODE_BLENDS                 115
 #define FX_MODE_TV_SIMULATOR           116
 #define FX_MODE_DYNAMIC_SMOOTH         117
-#ifndef WLED_DISABLE_2D
+#ifndef WLED_DISABLE_2D_FX
   // new 2D effects
   #define FX_MODE_2DSPACESHIPS           118
   #define FX_MODE_2DCRAZYBEES            119
@@ -280,32 +280,34 @@
   #define FX_MODE_2DAKEMI                147 // audio enhanced
   #define FX_MODE_2DGEQ                  148 // audio enhanced
   #define FX_MODE_2DFUNKYPLANK           149 // audio enhanced
-#endif //WLED_DISABLE_2D
-#define FX_MODE_PIXELWAVE              150 // audio enhanced
-#define FX_MODE_JUGGLES                151 // audio enhanced
-#define FX_MODE_MATRIPIX               152 // audio enhanced
-#define FX_MODE_GRAVIMETER             153 // audio enhanced
-#define FX_MODE_PLASMOID               154 // audio enhanced
-#define FX_MODE_PUDDLES                155 // audio enhanced
-#define FX_MODE_MIDNOISE               156 // audio enhanced
-#define FX_MODE_NOISEMETER             157 // audio enhanced
-#define FX_MODE_NOISEFIRE              158 // audio enhanced
-#define FX_MODE_PUDDLEPEAK             159 // audio enhanced
-#define FX_MODE_RIPPLEPEAK             160 // audio enhanced
-#define FX_MODE_GRAVCENTER             161 // audio enhanced
-#define FX_MODE_GRAVCENTRIC            162 // audio enhanced
-#define FX_MODE_PIXELS                 163 // audio enhanced
-#define FX_MODE_FREQWAVE               164 // audio enhanced
-#define FX_MODE_FREQMATRIX             165 // audio enhanced
-#define FX_MODE_WATERFALL              166 // audio enhanced
-#define FX_MODE_FREQPIXELS             167 // audio enhanced
-#define FX_MODE_BINMAP                 168 // audio enhanced
-#define FX_MODE_NOISEMOVE              169 // audio enhanced
-#define FX_MODE_FREQMAP                170 // audio enhanced
-#define FX_MODE_GRAVFREQ               171 // audio enhanced
-#define FX_MODE_DJLIGHT                172 // audio enhanced
-#define FX_MODE_BLURZ                  173 // audio enhanced
-#define FX_MODE_ROCKTAVES              174 // audio enhanced
+#endif //WLED_DISABLE_2D_FX
+#ifndef WLED_DISABLE_SFX
+  #define FX_MODE_PIXELWAVE              150 // audio enhanced
+  #define FX_MODE_JUGGLES                151 // audio enhanced
+  #define FX_MODE_MATRIPIX               152 // audio enhanced
+  #define FX_MODE_GRAVIMETER             153 // audio enhanced
+  #define FX_MODE_PLASMOID               154 // audio enhanced
+  #define FX_MODE_PUDDLES                155 // audio enhanced
+  #define FX_MODE_MIDNOISE               156 // audio enhanced
+  #define FX_MODE_NOISEMETER             157 // audio enhanced
+  #define FX_MODE_NOISEFIRE              158 // audio enhanced
+  #define FX_MODE_PUDDLEPEAK             159 // audio enhanced
+  #define FX_MODE_RIPPLEPEAK             160 // audio enhanced
+  #define FX_MODE_GRAVCENTER             161 // audio enhanced
+  #define FX_MODE_GRAVCENTRIC            162 // audio enhanced
+  #define FX_MODE_PIXELS                 163 // audio enhanced
+  #define FX_MODE_FREQWAVE               164 // audio enhanced
+  #define FX_MODE_FREQMATRIX             165 // audio enhanced
+  #define FX_MODE_WATERFALL              166 // audio enhanced
+  #define FX_MODE_FREQPIXELS             167 // audio enhanced
+  #define FX_MODE_BINMAP                 168 // audio enhanced
+  #define FX_MODE_NOISEMOVE              169 // audio enhanced
+  #define FX_MODE_FREQMAP                170 // audio enhanced
+  #define FX_MODE_GRAVFREQ               171 // audio enhanced
+  #define FX_MODE_DJLIGHT                172 // audio enhanced
+  #define FX_MODE_BLURZ                  173 // audio enhanced
+  #define FX_MODE_ROCKTAVES              174 // audio enhanced
+#endif
 
 #define MODE_COUNT                     175
 

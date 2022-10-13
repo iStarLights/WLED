@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=500">
+  <meta names="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="theme-color" content="#240047">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
   <meta charset="utf-8">
   <title>DMX Settings</title>
@@ -58,7 +61,7 @@
       loc = true;
       locip = localStorage.getItem('locIp');
       if (!locip) {
-        locip = prompt("File Mode. Please enter WLED IP!");
+        locip = prompt("File Mode. Please enter iStar IP!");
         localStorage.setItem('locIp', locip);
       }
     }

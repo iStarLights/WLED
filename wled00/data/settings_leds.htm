@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=500">
+  <meta names="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="theme-color" content="#240047">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 	<title>LED Settings</title>
 	<script>
@@ -325,8 +328,8 @@
 <hr style="width:260px">
 ${i+1}:
 <select name="LT${i}" onchange="UI(true)">
-<option value="22" selected>WS281x</option>
-<option value="30">SK6812 RGBW</option>
+<option value="22">WS281x</option>
+<option value="30" selected>SK6812 RGBW</option>
 <option value="31">TM1814</option>
 <option value="24">400kHz</option>
 <option value="25">TM1829</option>
@@ -347,7 +350,7 @@ ${i+1}:
 <!--option value="82">ArtNet RGB (network)</option-->
 <option value="88">DDP RGBW (network)</option>
 </select><br>
-<div id="co${i}" style="display:inline">Color Order:
+<div id="co${i}" style="display:inline">Colour Order:
 <select name="CO${i}">
 <option value="0">GRB</option>
 <option value="1">RGB</option>
@@ -391,7 +394,7 @@ ${i+1}:
 <hr style="width:260px">
 ${i+1}: Start: <input type="number" name="XS${i}" id="xs${i}" class="l starts" min="0" max="65535" value="${start}" oninput="UI();" required="">&nbsp;
 Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65535" value="${len}" required="" oninput="UI()">
-<div style="display:inline">Color Order:
+<div style="display:inline">Colour Order:
 <select id="xo${i}" name="XO${i}">
 <option value="0">GRB</option>
 <option value="1">RGB</option>
@@ -546,7 +549,7 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
 				loc = true;
 				locip = localStorage.getItem('locIp');
 				if (!locip) {
-					locip = prompt("File Mode. Please enter WLED IP!");
+					locip = prompt("File Mode. Please enter iStar IP!");
 					localStorage.setItem('locIp', locip);
 				}
 			}
@@ -555,6 +558,14 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
     }
 	</script>
 	<style>@import url("style.css");</style>
+	<style>
+		anchor {
+			display: block;
+			position: relative;
+			top: -80px;
+			visibility: hidden;
+		}
+		</style>
 </head>
 <body onload="S()">
 	<form id="form_s" name="Sf" method="post">
@@ -608,8 +619,10 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
     Custom bus start indices: <input type="checkbox" onchange="tglSi(this.checked)" id="si"><br>
     Use global LED buffer: <input type="checkbox" name="LD"><br>
     <hr style="width:260px">
+    <br>
+    <div class="hide">
     <div id="color_order_mapping">
-      Color Order Override:
+      Colour Order Override:
       <div id="com_entries"></div>
       <hr style="width:260px">
       <button type="button" id="com_add" onclick="addCOM()">+</button>
@@ -633,25 +646,29 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
     <div id="json" style="display:none;">JSON file: <input type="file" name="data" accept=".json"><button type="button" class="sml" onclick="uploadFile('/ir.json')">Upload</button><br></div>
     <a href="https://kno.wled.ge/interfaces/infrared/" target="_blank">IR info</a><br>
     Relay GPIO: <input type="number" min="-1" max="48" name="RL" onchange="UI()" class="xs"> Invert <input type="checkbox" name="RM"><span style="cursor: pointer;" onclick="off('RL')">&nbsp;&#x2715;</span><br>
-    <hr style="width:260px">
-		<h3>Defaults</h3>
+    <hr id="external-timers" class="anchor" style="width:260px">
+    </div>
+		<h3>Kasa Settings</h3>
 		Turn LEDs on after power up/reset: <input type="checkbox" name="BO"><br>
-    Default brightness: <input name="CA" type="number" class="m" min="0" max="255" required> (0-255)<br><br>
-    Apply preset <input name="BP" type="number" class="m" min="0" max="250" required> at boot (0 uses defaults)
+    <i>This setting enables the usage of Kasa plugs or external timers.<br>Please make sure to disable any <a href="/settings/time#schedules">Scheduled Presets</a> if using Kasa
+    <br>to schedule your lights.</i><br>
+    Default Power On Brightness: <input name="CA" type="number" class="m" min="0" max="255" required> (0-255)<br>
+    Apply preset <input name="BP" type="number" class="m" min="0" max="250" required> at boot (0 uses default purple)
     <br><br>
+    <h3>Advanced</h3>
 		Use Gamma correction for color: <input type="checkbox" name="GC"> (strongly recommended)<br>
-		Use Gamma correction for brightness: <input type="checkbox" name="GB"> (not recommended)<br><br>
+		Use Gamma correction for brightness: <input type="checkbox" name="GB"> (not recommended)<br>
 		Brightness factor: <input name="BF" type="number" class="m" min="1" max="255" required> %
 		<h3>Transitions</h3>
 		Crossfade: <input type="checkbox" name="TF"><br>
 		Transition Time: <input name="TD" type="number" class="xl" min="0" max="65500"> ms<br>
 		Enable Palette transitions: <input type="checkbox" name="PF">
-		<h3>Timed light</h3>
-		Default Duration: <input name="TL" type="number" class="m" min="1" max="255" required> min<br>
-		Default Target brightness: <input name="TB" type="number" class="m" min="0" max="255" required><br>
+		<h3>Timer Settings</h3>
+		Duration: <input name="TL" type="number" class="m" min="1" max="255" required> min<br>
+		Target Brightness: <input name="TB" type="number" class="m" min="0" max="255" required><br>
 		Mode:
     <select name="TW">
-			<option value="0">Wait and set</option>
+			<option value="0" selected>Wait and set</option>
 			<option value="1">Fade</option>
 			<option value="2">Fade Color</option>
 			<option value="3">Sunrise</option>
@@ -670,7 +687,7 @@ Length: <input type="number" name="XC${i}" id="xc${i}" class="l" min="1" max="65
     <br>
     Calculate CCT from RGB: <input type="checkbox" name="CR"> <br>
     CCT additive blending: <input type="number" class="s" min="0" max="100" name="CB" required> %</span>
-    <h3>Advanced</h3>
+    <h3>Other</h3>
 		Palette blending:
 		<select name="PB">
 			<option value="0">Linear (wrap if moving)</option>

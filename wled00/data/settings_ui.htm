@@ -3,6 +3,9 @@
 <head lang="en">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=500">
+	<meta names="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="theme-color" content="#240047">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 	<title>UI Settings</title>
 	<script>
@@ -14,19 +17,19 @@
 			"comp":{
 				"labels":"Show button labels",
 				"colors":{
-					"LABEL":"Color selection methods",
-					"picker": "Color Wheel",
+					"LABEL":"Colour selection methods",
+					"picker": "Colour Wheel",
 					"rgb": "RGB sliders",
 					"quick": "Quick color selectors",
 					"hex": "HEX color input"
 					},
-				"pcmbot": "Show bottom tab bar in PC mode",
+				"pcmbot": "Show bottom tab bar in Tablet Mode",
 				"pid": "Show preset IDs",
 				"seglen": "Set segment length instead of stop LED",
 				"segpwr": "Hide segment power &amp; brightness",
 				"segexp" : "Always expand first segment",
 				"css": "Enable custom CSS",
-				"hdays": "Enable custom Holidays list"
+				"hdays": "Enable custom Holidays Backgrounds list"
 			},
 			"theme":{
 				"alpha": {
@@ -235,6 +238,14 @@
 		}
 	</script>
 	<style>@import url("style.css");</style>
+	<style>
+		anchor {
+			display: block;
+			position: relative;
+			top: -80px;
+			visibility: hidden;
+		}
+		</style>
 </head>
 <body onload="S()">
 	<form id="form_s" name="Sf" method="post">
@@ -244,12 +255,13 @@
 		<span id="lssuc" style="color:green; display:none">&#10004; Local UI settings saved!</span>
 		<span id="lserr" style="color:red; display:none">&#9888; Could not access local storage. Make sure it is enabled in your browser.</span><hr>
 		</div>
-		<h2>Web Setup</h2>
+		<h2>User Settings</h2>
 		Server description: <input type="text" name="DS" maxlength="32"><br>
-		Sync button toggles both send and receive: <input type="checkbox" name="ST"><br>
-		Enable simplified UI: <input type="checkbox" name="SU"><br>
-		<i>The following UI customization settings are unique both to the WLED device and this browser.<br>
-		You will need to set them again if using a different browser, device or WLED IP address.<br>
+		Sync Button both sends and receives lighting effects from other lights <input type="checkbox" name="ST"><br>
+		Force Presets Only Mode  for everyone. (Disables Editor Mode): <input type="checkbox" name="SU"><br><br>
+		<hr>
+		<i>The following UI customization settings are unique both to the iStar controller and your device.<br>
+		You will need to set them again if using a different browser, device or iStar IP address.<br>
 		Refresh the main UI to apply changes.</i><br>
 		
 		<div id="gen">Loading settings...</div>
@@ -259,10 +271,9 @@
 		<span class="l"></span>: <input type="checkbox" id="comp_pcmbot" class="agi cb"><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_pid" class="agi cb"><br>
 		<span class="l"></span>: <input type="checkbox" id="comp_seglen" class="agi cb"><br>
-		<span class="l"></span>: <input type="checkbox" id="comp_segpwr" class="agi cb"><br>
-		<span class="l"></span>: <input type="checkbox" id="comp_segexp" class="agi cb"><br>
-		I hate dark mode: <input type="checkbox" id="dm" onchange="UI()"><br>
-		<span id="idonthateyou" style="display:none"><i>Why would you? </i>&#x1F97A;<br></span>
+		<div class="hide"><span class="l"></span>: <input type="checkbox" id="comp_segpwr" class="agi cb"><br>
+		<span class="l"></span>: <input type="checkbox" id="comp_segexp" class="agi cb"><br></div>
+		Disable dark mode: <input type="checkbox" id="dm"><br>
 		<span class="l"></span>: <input type="number" min=0.0 max=1.0 step=0.01 id="theme_alpha_tab" class="agi"><br>
 		<span class="l"></span>: <input type="number" min=0.0 max=1.0 step=0.01 id="theme_alpha_bg" class="agi"><br>
 		<span class="l"></span>: <input type="text" id="theme_color_bg" maxlength="9" class="agi"><br>
@@ -272,9 +283,10 @@
 		<span class="l"></span>: <input type="checkbox" id="comp_css" class="agi cb"><br>
 		<div id="skin">Custom CSS: <input type="file" name="data" accept=".css"> <input type="button" value="Upload" onclick="uploadFile(d.Sf.data,'/skin.css');"><br></div>
 		<span class="l"></span>: <input type="checkbox" id="comp_hdays" class="agi cb"><br>
-		<div id="holidays">Holidays: <input type="file" name="data2" accept=".json"> <input type="button" value="Upload" onclick="uploadFile(d.Sf.data2,'/holidays.json');"><br></div>
+		<div id="holidays hide">Holidays: <input type="file" name="data2" accept=".json"> <input type="button" class="hide" value="Upload" onclick="uploadFile(d.Sf.data2,'/holidays.json');"><br></div>
 		<div id="toast"></div>
-		<hr><button type="button" onclick="cLS()">Clear local storage</button>
+		<hr><button type="button" onclick="cLS()">Clear User Settings</button><br>
+		<i>Clearing user settings can fix many issue with loading on differnt devices.</i><br>
 		<hr><button type="button" onclick="B()">Back</button><button type="button" onclick="Save()">Save</button>
 	</form>
 </body>

@@ -3,12 +3,10 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#240047">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+	<meta name="theme-color" content="#222222">
 	<meta content="yes" name="apple-mobile-web-app-capable">
-	<meta name="theme-color" content="#240047">
 	<link rel="shortcut icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAFo9M/3AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABYklEQVQ4y61SPUvDUBQ9LyYWFI04OHYQHYqL9Ql+LGIdav+AIELwB/QHCHZzEboULDgIDl0c+gPqop2FVwuiXeIsCC4JmBhtcx3qS5OQ2qVnuh/nnXvv4QFhlDSbBhnXDTrVrF6QyLYqGblOHrv+to+h4LpBJLgKe7NEkREkOGmXNt2bW5T4NDt/pEsiCU5M6gFAy6qx8LaNqSIihDhaVo0pGCvkKDKXUiQ4EYEx2VydO56cIN+TubhyVXZQ7zGuG9TMpLHz+jar/HTtglMNLli0XDW85Fd8ZB1/CsN2Cs4Udy94Ou9Ll4WJsjAD0kiFpDobZQcJHoiqSf24b0nT6DGbYmttjyWRfU3V2h/XXa4bJG2T1oUEFQCkcN0g6XUzk/73jIJTxb5z4QPAxvThAgAow4wYhYfPm/eIBzPVRj/YW8HzWeVbQwU4KSLXycffKrfry4Mk1vQS4kiNfOaO9Yf/Aq/DnNyrDrVVAAAAAElFTkSuQmCC"/>
-	<title>Presets</title>
+	<title>WLED</title>
 	<script>
 	function feedback(){}
 	// instead of including [script src="iro.js"][/script] and [script src="rangetouch.js"][/script]
@@ -18,9 +16,6 @@
 	// it will also call onLoad() after last is loaded (it was removed from [body onload="onLoad()"]).
 	var h  = document.getElementsByTagName('head')[0];
 	var l  = document.createElement('script');
-	var link = document.createElement('link');
-	link.rel = 'apple-touch-icon';
-	link.href = "https://raw.githubusercontent.com/iStarLights/iStar-App-Icons/main/ios/apple-touch-icon.png";
 	l.type = 'application/javascript';
 	l.src = 'iro.js';
 	l.addEventListener('load', (e) => {
@@ -54,29 +49,27 @@
 		setTimeout(function(){h.appendChild(l)},50);
 	});
 	setTimeout(function(){h.appendChild(l)},50);
-	setTimeout(()=>{h.appendChild(link)},50);
 	</script>
 	<link rel="stylesheet" href="simple.css">
 </head>
 <body>
 
-<div id="cv" class="overlay">Loading iStar Lights UI...</div>
-<noscript><div class="overlay" style="opacity:1;">Sorry, iStar Lights UI needs JavaScript!</div></noscript>
+<div id="cv" class="overlay">Loading iStar UI...</div>
+<noscript><div class="overlay" style="opacity:1;">Sorry, iStar UI needs JavaScript!</div></noscript>
 <div id="bg"></div>
 
 <div class="wrapper" id="top">
 	<div class="tab top">
 		<div class="btnwrap">
 			<button id="buttonPower" onclick="togglePower()"><i class="icons">&#xe08f;</i><p class="tab-label">Power</p></button>
-            <button id="buttonSr" onclick="toggleLiveview()"><i class="icons">&#xe410;</i><p class="tab-label">Preview</p></button>
 			<button id="buttonI" onclick="toggleInfo()"><i class="icons">&#xe066;</i><p class="tab-label">Info</p></button>
-			<!--button id="buttonNodesSmpl" class="hide" onclick="toggleNodes()"><i class="icons hide">&#xe22d;</i><p class="tab-label hide">Nodes</p></button></div-->
+			<button id="buttonNodes" onclick="toggleNodes()"><i class="icons">&#xe22d;</i><p class="tab-label">Nodes</p></button></div>
 			<button onclick="window.location.href='/settings';"><i class="icons">&#xe0a2;</i><p class="tab-label">Config</p></button>
-            <button id="buttonCP" onclick="tglCP()" class="hide"><i class="icons hide">&#xe2b3;</i><p class="tab-label hide">Expand</p></button>
+            <button id="buttonCP" onclick="tglCP()"><i class="icons">&#xe2b3;</i><p class="tab-label">Expand</p></button>
             <!--button id="buttonBri" onclick="tglBri()"><i class="icons">&#xe2a6;</i><p class="tab-label">Brightness</p></button-->
 		</div>
 		<div id="briwrap">
-			<p class="label hd">Brightness</p>
+			<p class="label hd">Global brightness</p>
 			<div class="il">
 				<i class="icons slider-icon" onclick="tglTheme()">&#xe2a6;</i>
 				<div class="sliderwrap il">
@@ -86,7 +79,6 @@
 				<output class="sliderbubble"></output>
 			</div>
 		</div>
-        <iframe id="liveview" src="about:blank"></iframe>
 	</div>
 </div>
 
@@ -97,7 +89,7 @@
         	<div id="pql"></div>
 		</div>
 
-		<div id="QCS" class="center hide">
+		<div id="QCS" class="center">
 			<p class="label h">Solid color</p>
 			<div id="qcs-w" class="center">
 				<div class="qcs" onclick="pC('#ff0000');" title="Red" style="background-color:#ff0000;"></div>
@@ -114,9 +106,9 @@
 			</div>
 		</div>
 
-		<div id="picker" class="center hide"></div>
+		<div id="picker" class="center"></div>
 
-		<div id="Colors" class="center hide">
+		<div id="Colors" class="center">
 			<div id="vwrap">
 				<!--p class="label h">Value</p-->
 				<div class="sliderwrap il">
@@ -168,7 +160,7 @@
 			</div>
 		</div>
 
-		<div id="Slots" class="center hide">
+		<div id="Slots" class="center">
         	<p class="label h">Colour slots</p>
 			<div id="csl" class="center">
 				<button class="xxs btn" onclick="selectSlot(0);">1</button>
@@ -177,7 +169,7 @@
 			</div>
 		</div>
 
-		<div id="Segments" class="center hide">
+		<div id="Segments" class="center">
 			<div id="segcont"></div>
 		</div>
 
@@ -186,12 +178,12 @@
 			<div class="fnd">
 				<input type="text" class="fnd" placeholder="Search" oninput="search(this,'pcont')" onfocus="search(this)" />
 				<i class="icons clear-icon" onclick="clean(this);">&#xe38f;</i>
-				<i class="icons search-icon">&#xe0a1;</i>
+				<i class="icons search-icon">&#xe986;</i>
 			</div>
 			<div id="pcont" class="list"></div>
 		</div>
 
-		<div id="Effects" class="center hide">
+		<div id="Effects" class="center">
 			<p class="label h">Effect</p>
 			<div title="Effect speed">
 				<i class="icons slider-icon">&#xe325;</i>
@@ -244,30 +236,27 @@
 
 <div id="info" class="modal">
 	<div id="imgw">
-		<img class="wi" alt="" src="data:image/png;base64,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" />
+		<img class="wi" alt="" src="iVBORw0KGgoAAAANSUhEUgAAAB0AAAADCAYAAABvTwTkAAAACXBIWXMAAAwpAAAMKQFAOk6hAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAOlJREFUGJUtzr0rxHEAx/HX95I7Mhw6ltPJY+JKl8fOX2CQ5QYpy40yKOUvsN4g/4QsSslm8bTaDLqibiA5STqUr8HvM78/795hMV/tybZGy8Xhr+zeYWejrbDziDVcYwSDOMBWCGE3xljDM2qYRyOEUI8xbiCNXhyjHwXUUcERltBIrWTS+5mf7Hi8rdbObuaKyKEDGZwkpwW0xxgHMIkJBPShy/+GkE/4IayjEkK4QBNXibcj9Tr29PYy+zCT2d68yuW635PaJkr4xRemcIdlnOMeKXxjNcZYRivhS/jAKS6ToFbi/cT0H8BbQnF6pli1AAAAAElFTkSuQmCC" />
 	</div><br>
 	<div id="kv">Loading...</div><br>
 	<div>
 	<button class="btn" onclick="requestJson()">Refresh</button>
 	<button class="btn" onclick="toggleInfo()">Close Info</button>
-	<button class="btn" onclick="toggleNodes()">Controller List</button>
-	<button class="btn" id="resetbtn" onclick="cnfReset()">Reboot iStar Lights</button>
-	<button class="btn infobtn" onclick="window.open('/sliders','_self');">Switch To Editor Mode</button>
+	<button class="btn" onclick="toggleNodes()">Instance List</button>
+	<button class="btn" id="resetbtn" onclick="cnfReset()">Reboot iStar</button>
 	</div>
-	<span class="h">Made with <span id="heart">&#10084;&#xFE0E;</span> by Aircoookie and <a href="https://istarlights.homes" target="_blank">iStar Lights</a></span>
+	<span class="h">Made with <span id="heart">&#10084;&#xFE0E;</span> by Aircoookie and the <a href="https://wled.discourse.group/" target="_blank">iStar community</a></span>
 </div>
 
 <div id="nodes" class="modal">
-	<div id="ndlt">iStar Controllers</div>
+	<div id="ndlt">iStar instances</div>
 	<div id="kn">Loading...</div><br>
 	<div>
 	<button class="btn" onclick="loadNodes()">Refresh</button>
 	<button class="btn" onclick="toggleNodes()">Close list</button>
 	</div>
 </div>
-<div id="mliveview2D" class="modal">
-	<div id="kliveview2D" style="width:100%; height:100%">Loading...</div><br>
-</div>
+
 <i id="roverstar" class="icons huge" onclick="setLor(0)">&#xe410;</i><br>
 <script src="simple.js"></script>
 </body>

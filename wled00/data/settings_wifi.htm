@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=500">
+	<meta names="apple-mobile-web-app-status-bar-style" content="#2C1C3F" />
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta name="theme-color" content="#240047">
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 	<title>WiFi Settings</title>
 	<script>
@@ -33,7 +36,7 @@
 				loc = true;
 				locip = localStorage.getItem('locIp');
 				if (!locip) {
-					locip = prompt("File Mode. Please enter WLED IP!");
+					locip = prompt("File Mode. Please enter iStar IP!");
 					localStorage.setItem('locIp', locip);
 				}
 			}
@@ -42,6 +45,14 @@
 		}
 	</script>
 	<style>@import url("style.css");</style>
+	<style>
+		anchor {
+			display: block;
+			position: relative;
+			top: -80px;
+			visibility: hidden;
+		}
+		</style>
 </head>
 <body onload="S()">
 	<form id="form_s" name="Sf" method="post">
@@ -49,44 +60,42 @@
 		<div class="helpB"><button type="button" onclick="H()">?</button></div>
 		<button type="button" onclick="B()">Back</button><button type="submit">Save & Connect</button><hr>
 		</div>
-		<h2>WiFi setup</h2>
-		<h3>Connect to existing network</h3>
-		Network name (SSID, empty to not connect): <br><input type="text" name="CS" maxlength="32"><br>
-		Network password: <br> <input type="password" name="CP" maxlength="63"><br>
+		<h2>WiFi Setup</h2>
+		<h3>Connect to WiFi Network</h3>
+		Wifi Name: <br><input type="text" name="CS" maxlength="32"><br>
+		Wifi Password: <br> <input type="password" name="CP" maxlength="63"><br>
 		Static IP (leave at 0.0.0.0 for DHCP):<br>
 		<input name="I0" type="number" class="s" min="0" max="255" required> .
 		<input name="I1" type="number" class="s" min="0" max="255" required> .
 		<input name="I2" type="number" class="s" min="0" max="255" required> .
 		<input name="I3" type="number" class="s" min="0" max="255" required><br>
-		Static gateway:<br>
+		Static Gateway (Router IP Address):<br>
 		<input name="G0" type="number" class="s" min="0" max="255" required> .
 		<input name="G1" type="number" class="s" min="0" max="255" required> .
 		<input name="G2" type="number" class="s" min="0" max="255" required> .
 		<input name="G3" type="number" class="s" min="0" max="255" required><br>
-		Static subnet mask:<br>
+		Static Subnet Mask:<br>
 		<input name="S0" type="number" class="s" min="0" max="255" required> .
 		<input name="S1" type="number" class="s" min="0" max="255" required> .
 		<input name="S2" type="number" class="s" min="0" max="255" required> .
 		<input name="S3" type="number" class="s" min="0" max="255" required><br>
-		mDNS address (leave empty for no mDNS):<br/>
+		mDNS address (leave empty for no mDNS, only available on Mac, PC, & iOS):<br/>
 		http:// <input type="text" name="CM" maxlength="32"> .local<br>
 		Client IP: <span class="sip"> Not connected </span> <br>
 		<h3>Configure Access Point</h3>
 		AP SSID (leave empty for no AP):<br> <input type="text" name="AS" maxlength="32"><br>
-		Hide AP name: <input type="checkbox" name="AH"><br>
-		AP password (leave empty for open):<br> <input type="password" name="AP" maxlength="63" pattern="(.{8,63})|()" title="Empty or min. 8 characters"><br>
-		Access Point WiFi channel: <input name="AC" type="number" class="xs" min="1" max="13" required><br>
-		AP opens:
+		Hide AP Name: <input type="checkbox" name="AH"><br>
+		AP Password (leave empty for open):<br> <input type="password" name="AP" maxlength="63" pattern="(.{8,63})|()" title="Empty or min. 8 characters"><br>
+		Access Point WiFi Channel: <input name="AC" type="number" class="xs" min="1" max="13" required><br>
+		AP Opens:
 		<select name="AB">
 		<option value="0">No connection after boot</option>
 		<option value="1">Disconnected</option>
-		<option value="2">Always</option>
+		<option value="2" selected>Always</option>
 		<option value="3">Never (not recommended)</option></select><br>
 		AP IP: <span class="sip"> Not active </span><br>
-		<h3>Experimental</h3>
-		Disable WiFi sleep: <input type="checkbox" name="WS"><br>
-		<i>Can help with connectivity issues.<br>
-		Do not enable if WiFi is working correctly, increases power consumption.</i>
+		Disable WiFi Sleep: <input type="checkbox" name="WS"><br>
+		<i>Can help with connectivity issues.</i>
 		<div id="ethd">
 			<h3>Ethernet Type</h3>
 			<select name="ETH">

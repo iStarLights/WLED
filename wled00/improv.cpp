@@ -201,7 +201,7 @@ void sendImprovInfoResponse() {
   out[lengthSum] = hlen;
   lengthSum += hlen + 1;
   //Use serverDescription if it has been changed from the default "WLED", else mDNS name
-  bool useMdnsName = (strcmp(serverDescription, "WLED") == 0 && strlen(cmDNS) > 0);
+  bool useMdnsName = (strcmp(serverDescription, "iStar Lights") == 0 && strlen(cmDNS) > 0);
   strcpy(out+lengthSum+1,useMdnsName ? cmDNS : serverDescription);
   uint8_t nlen = strlen(useMdnsName ? cmDNS : serverDescription);
   out[lengthSum] = nlen;

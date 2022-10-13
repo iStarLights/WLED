@@ -32,9 +32,7 @@ var hol = [
 	[0,2,17,1,"https://images.alphacoders.com/491/491123.jpg"], // st. Patrick's day
 	[2025,3,20,2,"https://aircoookie.github.io/easter.png"],
 	[2023,3,9,2,"https://aircoookie.github.io/easter.png"],
-	[2024,2,31,2,"https://aircoookie.github.io/easter.png"],
-	[0,6,4,1,"https://initiate.alphacoders.com/download/wallpaper/516792/images/jpg/510921363292536"], // 4th of July
-	[0,0,1,1,"https://initiate.alphacoders.com/download/wallpaper/1198800/images/jpg/2522807481585600"] // new year
+	[2024,2,31,2,"https://aircoookie.github.io/easter.png"]
 ];
 
 function handleVisibilityChange() {if (!d.hidden && new Date () - lastUpdate > 3000) requestJson();}
@@ -654,9 +652,9 @@ function populateInfo(i)
 				urows += inforow(k,val);
 		}
 	}
-	var vcn = "Kuuhaku";
-	if (i.ver.startsWith("0.14.")) vcn = "Hoshi";
-	if (i.ver.includes("-bl")) vcn = "Supāku";
+	var vcn = "Alpha Centauri";
+	if (i.ver.startsWith("0.14.")) vcn = "Abraham";
+	if (i.ver.includes("-bl")) vcn = "Proxima Centauri";
 	if (i.cn) vcn = i.cn;
 
 	cn += `v${i.ver} "${vcn}"<br><br><table>
@@ -736,12 +734,11 @@ function populateSegments(s)
 		<input type="checkbox" id="seg${i}sel" onchange="selSeg(${i})" ${inst.sel ? "checked":""}>
 		<span class="checkmark"></span>
 	</label>
-	<i class="icons e-icon frz" id="seg${i}frz" onclick="event.preventDefault();tglFreeze(${i});">&#x${inst.frz ? (li.live && li.liveseg==i?'e410':'e0e8') : 'e325'};</i>
+	<i class="icons e-icon frz" title="Freeze Segment Effects" id="seg${i}frz" onclick="event.preventDefault();tglFreeze(${i});">&#x${inst.frz ? (li.live && li.liveseg==i?'e410':'e0e8') : 'e325'};</i>
 	<div class="segname" onclick="selSegEx(${i})">
 		${inst.n ? inst.n : "Segment "+i}
-		<i class="icons edit-icon flr" id="seg${i}nedit" onclick="tglSegn(${i})">&#xe2c6;</i>
+		<i class="icons edit-icon flr" id="seg${i}nedit" onclick="tglSegn(${i})">&#xe2c6;</i><i class="icons title="Show Settings"  e-icon flr" id="sege${i}" onclick="expand(${i})">&#xe395;</i>
 	</div>
-	<i class="icons e-icon flr" id="sege${i}" onclick="expand(${i})">&#xe395;</i>
 	${cfg.comp.segpwr?segp:''}
 	<div class="segin" id="seg${i}in">
 		<input type="text" class="ptxt noslide" id="seg${i}t" autocomplete="off" maxlength=32 value="${inst.n?inst.n:""}" placeholder="Enter name..."/>
@@ -839,10 +836,10 @@ function populateEffects()
 				else fd = fxdata[id].substr(1);
 				let eP = (fd == '')?[]:fd.split(";"); // effect parameters
 				let p = (eP.length<3 || eP[2]==='')?[]:eP[2].split(","); // palette data
-				if (p.length>0 && (p[0] !== "" && !isNumeric(p[0]))) nm += "&#x1F3A8;";	// effects using palette
+				if (p.length>0 && (p[0] !== "" && !isNumeric(p[0]))) nm += "&#8203;";	// effects using palette 
 				let m = (eP.length<4 || eP[3]==='')?[]:eP[3].split(","); // metadata
 				if (m.length>0) for (let r of m) {
-					if (r.substring(0,2)=="1d") nm += "&#8942;"; // 1D effects
+					if (r.substring(0,2)=="1d") nm += "&#8203;"; // 1D effects
 					if (r.substring(0,2)=="2d") nm += "&#9638;"; // 2D effects
 					if (r.substring(0,2)=="vo") nm += "&#9834;"; // volume effects
 					if (r.substring(0,2)=="fr") nm += "&#9835;"; // frequency effects
@@ -1799,27 +1796,27 @@ ${makePlSel(plJson[i].end?plJson[i].end:0, true)}
 		content =
 `<label class="check revchkl">
 	<span class="lstIname">
-	Include brightness
+	Include Brightness
 	</span>
 	<input type="checkbox" id="p${i}ibtgl" checked>
 	<span class="checkmark"></span>
 </label>
 <label class="check revchkl">
 	<span class="lstIname">
-	Save segment bounds
+	Save Segments
 	</span>
 	<input type="checkbox" id="p${i}sbtgl" checked>
 	<span class="checkmark"></span>
 </label>
-<label class="check revchkl">
+<label class="check revchkl hide">
 	<span class="lstIname">
-	Checked segments only
+	Checked Segments Only
 	</span>
 	<input type="checkbox" id="p${i}sbchk">
 	<span class="checkmark"></span>
 </label>`;
 		if (Array.isArray(lastinfo.maps) && lastinfo.maps.length>0) {
-			content += `<div class="lbl-l">Ledmap:&nbsp;<div class="sel-p"><select class="sel-p" id="p${i}lmp"><option value="">None</option>`;
+			content += `<div class="lbl-l hide">Ledmap:&nbsp;<div class="sel-p"><select class="sel-p" id="p${i}lmp"><option value="">None</option>`;
 			for (const k of (lastinfo.maps||[])) content += `<option value="${k}"${(i>0 && pJson[i].ledmap==k)?" selected":""}>${k}</option>`;
 			content += "</select></div></div>";
 		}
@@ -1827,17 +1824,18 @@ ${makePlSel(plJson[i].end?plJson[i].end:0, true)}
 
 	return `<input type="text" class="ptxt noslide ${i==0?'show':''}" id="p${i}txt" autocomplete="off" maxlength=32 value="${(i>0)?pName(i):""}" placeholder="Enter name..."/>
 <div class="c">Quick load label: <input type="text" class="stxt noslide" maxlength=2 value="${qlName(i)}" id="p${i}ql" autocomplete="off"/></div>
+<div class="h">Quick Load buttons allow you to save a button at the top of the Presets page.</div>
 <div class="h">(leave empty for no Quick load button)</div>
 <div ${pl&&i==0?"style='display:none'":""}>
 <label class="check revchkl">
 	<span class="lstIname">
-	${pl?"Show playlist editor":(i>0)?"Overwrite with state":"Use current state"}
+	${pl?"Show playlist editor":(i>0)?"Overwrite Preset<br>with Current Lights":"Use Current Lights"}
 	</span>
 	<input type="checkbox" id="p${i}cstgl" onchange="tglCs(${i})" ${(i==0||pl)?"checked":""}>
 	<span class="checkmark"></span>
 </label>
 </div>
-<div class="po2" id="p${i}o2">API command<br><textarea class="apitxt" id="p${i}api"></textarea></div>
+<div class="po2" id="p${i}o2">Preset Code<br><textarea class="apitxt" id="p${i}api"></textarea></div>
 <div class="po1" id="p${i}o1">${content}</div>
 <div class="c">Save to ID <input class="noslide" id="p${i}id" type="number" oninput="checkUsed(${i})" max=250 min=1 value=${(i>0)?i:getLowestUnusedP()}></div>
 <div class="c">
@@ -2734,10 +2732,10 @@ function togglePcMode(fromB = false)
 		localStorage.setItem('pcm', pcModeA);
 		pcMode = pcModeA;
 	}
-	if (wW < 1250 && !pcMode) return;
-	if (!fromB && ((wW < 1250 && lastw < 1250) || (wW >= 1250 && lastw >= 1250))) return;
+	if (wW < 1000 && !pcMode) return;
+	if (!fromB && ((wW < 1000 && lastw < 1000) || (wW >= 1000 && lastw >= 1000))) return;
 	openTab(0, true);
-	if (wW < 1250) {pcMode = false;}
+	if (wW < 1000) {pcMode = false;}
 	else if (pcModeA && !fromB) pcMode = pcModeA;
 	updateTablinks(0);
 	gId('buttonPcm').className = (pcMode) ? "active":"";
